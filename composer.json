@@ -17,7 +17,7 @@
         "Policies"
     ],
     "require": {
-        "illuminate/support": "~8",
+        "illuminate/support": "~8|~10",
         "laravel/framework": "~8",
         "kwaadpepper/enum": "^2.0",
         "facade/flare-client-php": "^1.8",
