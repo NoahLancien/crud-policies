@@ -720,14 +720,12 @@ trait IsCrudModel
      */
     private static function assertEnumIscorrect(array $prop): void
     {
+        $enumClass = $prop['enum'] ? new \ReflectionClass($prop['enum']) : null;
         if (
-            $prop['type']->equals(CrudType::enum()) and (is_null($prop['enum']) or
-                !\is_subclass_of($prop['enum'], BaseEnum::class))
+            $prop['type']->equals(CrudType::enum()) and
+            (is_null($prop['enum']) or !$enumClass->isEnum())
         ) {
-            throw new CrudException(sprintf(
-                '$editableProperties[\'enum\'] array value must be an enum `%s`',
-                BaseEnum::class
-            ));
+            throw new CrudException('$editableProperties[\'enum\'] array value must be an enum');
         }
     }
 
