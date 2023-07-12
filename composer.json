@@ -18,7 +18,7 @@
     ],
     "require": {
         "illuminate/support": "~8|~10",
-        "laravel/framework": "~8",
+        "laravel/framework": "~8|~10",
         "kwaadpepper/enum": "^2.0",
         "facade/flare-client-php": "^1.8",
         "mews/purifier": "^3.3",
