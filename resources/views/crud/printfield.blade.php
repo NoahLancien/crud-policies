@@ -12,7 +12,7 @@
                 <a href="mailto:$field">{{ $field }}</a>
                 @break
             @case(CrudType::enum())
-                {{ $model->{$fieldName}->label }}
+                {{ $model->{$fieldName}->label() }}
                 @break
             @case(CrudType::belongsTo())
                 @php
@@ -102,7 +102,7 @@
                 <a href="mailto:$field">{{ $field }}</a>
                 @break
             @case(CrudType::enum())
-                {{ $model->{$fieldName}->label }}
+                {{ $model->{$fieldName}->label() }}
                 @break
             @case(CrudType::date())
                 {{ $model->{$fieldName} ? $model->{$fieldName}->isoFormat('D/MM/YYYY') : '' }}
